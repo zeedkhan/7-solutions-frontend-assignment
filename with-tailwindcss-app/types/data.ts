@@ -82,8 +82,8 @@ type RefromData = {
     male: number;
     female: number;
     ageRange: string;
-    minAge: number;
-    maxAge: number;
+    minAge?: number;
+    maxAge?: number;
     hair: Record<string, number>;
     addressUser: Record<string, string>;
 };
