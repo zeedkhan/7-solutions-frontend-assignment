@@ -16,7 +16,8 @@ const builder = () => {
         return {
             ...data,
             id: idx,
-            queueing: false
+            queueing: false,
+            timeoutId: null
         }
     });
 

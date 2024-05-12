@@ -7,13 +7,13 @@ const Home = () => {
             <h2>Approaches(s)</h2>
             <ul>
                 <li>
-                    <Link href="/auto-delete/queue">
-                        1: Queue (Advanced)
+                    <Link href="/auto-delete/graph">
+                        1: Graph + Queue (My best solution)
                     </Link>
                 </li>
                 <li>
-                    <Link href="/auto-delete/grpah">
-                        2: Graph + Queue (Advanced)
+                    <Link href="/auto-delete/queue">
+                        2: Queue
                     </Link>
                 </li>
             </ul>

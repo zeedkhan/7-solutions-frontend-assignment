@@ -4,6 +4,7 @@ interface Data {
     name: string;
     id?: number;
     queueing?: boolean;
+    timeoutId?: NodeJS.Timeout | null;
 };
 
 
