@@ -45,6 +45,11 @@ const groupDepartment = (users: User[]): Map<string, RefromData> => {
         departmentMap.set(department, newData);
     });
 
+    departmentMap.forEach((value) => {
+        delete value.minAge;
+        delete value.maxAge;
+    });
+
     return departmentMap;
 };
 

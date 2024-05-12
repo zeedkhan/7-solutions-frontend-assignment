@@ -6,12 +6,12 @@ export default function Home() {
       <h1 className="text-4xl font-bold text-center">Thank you for your some fun quizes</h1>
       <ul>
         <li>
-          <Link href="/auto-delete/">
+          <Link href="/auto-delete/" data-testid="auto-delete">
             1: Auto Delete
           </Link>
         </li>
         <li>
-          <Link href="/department/">
+          <Link href="/department/" data-testid="department">
             2: Create data from API
           </Link>
         </li>

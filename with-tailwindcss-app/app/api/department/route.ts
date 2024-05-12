@@ -1,14 +1,19 @@
 import groupDepartment from "@/lib/group-department";
+import { User } from "@/types/data";
+import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-    const response = await fetch('https://dummyjson.com/users');
-    if (!response.ok) {
-        throw new Error('Failed to fetch departments');
+    try {
+        const { data } = await axios.get<{ users: User[] }>("https://dummyjson.com/users");
+
+        const users = data.users;
+
+        const reformDepartments = groupDepartment(users);
+
+        return NextResponse.json(Object.fromEntries(reformDepartments), { status: 200 });
+    } catch (error) {
+        return NextResponse.json({ message: "Failed" }, { status: 500 });
     }
-    const { users } = await response.json();
 
-    const reformDepartments = groupDepartment(users);
-
-    return NextResponse.json({ departments: Object.fromEntries(reformDepartments) }, { status: 200 });
 } 
